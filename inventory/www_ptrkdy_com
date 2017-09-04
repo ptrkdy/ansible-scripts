@@ -1,0 +1,5 @@
+[www_ptrkdy_com:children]
+www_ptrkdy_webserver
+
+[www_ptrkdy_webserver]
+www.ptrkdy.com

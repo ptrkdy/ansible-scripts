@@ -1,0 +1,27 @@
+- hosts: www_ptrkdy_com
+  sudo: yes
+  gather_facts: true
+
+#  pre_tasks:
+#    - name: Set Directory Permission
+#      file: dest={{ item }} state=directory
+#         owner=cassandra group=cassandra
+#         mode=0755
+#         recurse=yes
+#      with_items:
+#         - /data/nginx
+#         - /var/log/nginx
+
+  roles:
+    - { role: ../roles/nginx }
+
+
+# Add nginx playbook
+
+
+# Add config file
+
+# Add roles and template
+
+
+# get better with automation

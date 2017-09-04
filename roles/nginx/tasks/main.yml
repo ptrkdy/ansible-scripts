@@ -1,0 +1,40 @@
+### install packages ###
+
+- name: install the latest version of nginx
+  package:
+    name: nginx
+    state: latest
+
+### manage configs ###
+
+- name: enforce configuration files
+  template:
+    src: templates/nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: 0755 
+  template:
+    src: templates/sites-available.default.j2
+    dest: /etc/nginx/sites-available/default
+    owner: root
+    group: root
+    mode: 0755
+  notify:
+     - restart nginx
+
+### manage service ###
+
+# Action to start service nginx, if not running
+- service:
+    name: nginx
+    state: started
+
+### handlers ###
+
+# check ../handlers/main.yml
+# notify restart nginx is in ../handlers/main.yml
+
+### manage logs ###
+### to be added ###
+
